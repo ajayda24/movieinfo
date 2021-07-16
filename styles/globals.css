@@ -1,16 +1,98 @@
-html,
-body {
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa');
+* {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body{
+  /* font-family: 'Merienda', cursive; */
+  font-family: 'Comfortaa', cursive;
+  /* background: linear-gradient(to right, #606c88, #3f4c6b); */
+  background-color: #344E76;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
+a:focus,
+a:hover{
+  color: aliceblue;
 }
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 100px) {
+  html {
+    font-size: 10%;
+  }
+}
+@media (min-width: 180px) {
+  html {
+    font-size: 30%;
+  }
+}
+@media (min-width: 280px) {
+  html {
+    font-size: 35%;
+  }
+}
+@media (min-width: 350px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (min-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (min-width: 1201px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: aliceblue; 
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #344E76; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #344E76; 
+} 

@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 import { Carousel } from 'react-bootstrap'
 import {useState} from 'react'
+import {useRouter} from 'next/router'
 
 export default function CarouselDiv(props) {
+  const router = useRouter()
+
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -21,6 +24,11 @@ export default function CarouselDiv(props) {
       {props.carouselList.map((s) => (
         <Carousel.Item key={s.id}>
           <img
+            onClick={() =>
+              router.push(
+                `/details/${s.id}?tv=${s.first_air_date ? true : false}`
+              )
+            }
             className='d-block w-50'
             src={`https://image.tmdb.org/t/p/w500/${s.poster_path}`}
             alt='First slide'

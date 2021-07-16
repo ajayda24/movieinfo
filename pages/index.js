@@ -258,7 +258,7 @@ const Button = styled.button`
   border-radius: 10px;
 `
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const nowPlaying = await getNowPlaying(1)
   const carouselList = [
     nowPlaying.results[0],

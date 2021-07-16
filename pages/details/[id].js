@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { getSingleMovie,getTrailer } from '../../tmdb'
 import ReactPlayer from 'react-player/youtube'
+import {device} from '../../mediaquery'
 
 function Single(props) {
   const router = useRouter()
@@ -40,12 +41,12 @@ function Single(props) {
             )}
           </div>
         </Card>
-        <Card width='55rem'>
+        <Video>
           <ReactPlayer
             url={`https://www.youtube.com/embed/${props.trailer}`}
             controls
           />
-        </Card>
+        </Video>
       </CardContainer>
     </>
   )
@@ -56,12 +57,12 @@ const Card = styled.div`
   max-width: 75rem;
   background-color: rgba(240, 248, 255, 0.9);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
-  margin: 0 1rem 2rem 0;
+  margin: 1rem 0;
   border-radius: 10px;
   text-align: center;
   color: black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   .content {
@@ -74,9 +75,33 @@ const Card = styled.div`
     padding: 1rem;
     /* font-size: 1.5rem; */
   }
-  & h4{
+  & h4 {
     margin: 2rem 0;
   }
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
+  /* @media only screen and (${breakpoint.device.sm}) {
+    flex-direction: column;
+  } */
+  /* @media only screen and (${breakpoint.device.lg}) {
+    display: flex;
+  } */
+`
+
+const Video = styled.div`
+  width: 70vw;
+  max-width: 75rem;
+  background-color: rgba(240, 248, 255, 0.9);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  margin: 1rem 0;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `
 
 const CardContainer = styled.div`
